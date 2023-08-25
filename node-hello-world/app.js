@@ -23,6 +23,6 @@ app.post("/post", function (req, res) {
   console.log("lb neg post test");
   const apiKey = req.headers['x-api-key'];
   console.log("api key -->" + apiKey);
-  res.send("lb neg post test ok --" + req.body);
+  res.send("lb neg post test ok --" + req.body +"api key -->" + apiKey);
 });
 
