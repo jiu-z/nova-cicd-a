@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:12.16.3
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -8,12 +8,13 @@ WORKDIR /usr/src/app
 # where available (npm@5+)
 COPY package*.json ./
 
-RUN npm install
-# If you are building your code for production
-# RUN npm ci --only=production
-
-# Bundle app source, copy everything in current folder to /usr/src/app (workdir)
+# Bundle app source
 COPY . .
 
+RUN npm install
+
+RUN chmod +x . ./docker/start.sh
+
 EXPOSE 8080
-CMD [ "node", "app.js" ]
+
+CMD [ "./docker/start.sh" ]
