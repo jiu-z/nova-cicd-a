@@ -1,4 +1,10 @@
 # Monitoring and Observability with Datadog
+
+## Start :
+docker compose build
+docker compose up -d
+
+
 This is the repository for the LinkedIn Learning course Monitoring and Observability with Datadog. The full course is available from [LinkedIn Learning][lil-course-url].
 
 ![Monitoring and Observability with Datadog][lil-thumbnail-url] 
