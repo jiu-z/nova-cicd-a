@@ -2,7 +2,8 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 const port = 8080;
-
+// This line must come before importing any instrumented module.
+const tracer = require('dd-trace').init();
 app.use(bodyParser.text());
 
 app.get('/', (req, res) => {
